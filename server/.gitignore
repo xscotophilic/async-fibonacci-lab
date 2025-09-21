@@ -1,0 +1,23 @@
+# npm
+node_modules
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# coverage
+coverage
+coverage/
+
+# build
+build
+
+# logs
+logs
+*.log*
+
+# misc
+.DS_Store
+Thumbs.db
