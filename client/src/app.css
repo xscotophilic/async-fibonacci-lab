@@ -1,0 +1,96 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@layer components {
+	.glass-snackbar-container {
+		@apply pointer-events-none fixed right-8 bottom-8 z-50 flex flex-col items-end gap-4;
+	}
+	.glass-snackbar {
+		@apply max-w-xs min-w-[220px] rounded-2xl border p-4 text-white opacity-95 shadow-md backdrop-blur-lg transition-all duration-300 ease-in-out;
+		transform: translateY(0);
+	}
+	.glass-snackbar-enter {
+		opacity: 0;
+		transform: translateY(40px);
+	}
+	.glass-snackbar-leave {
+		opacity: 0;
+		transform: translateY(-40px);
+	}
+	.glass-snackbar-info {
+		@apply border-sky-500/60 bg-sky-500/10;
+	}
+	.glass-snackbar-success {
+		@apply border-emerald-500/60 bg-emerald-500/10;
+	}
+	.glass-snackbar-warning {
+		@apply border-yellow-500/60 bg-yellow-500/10;
+	}
+	.glass-snackbar-error {
+		@apply border-red-500/60 bg-red-500/10;
+	}
+
+	.fullscreen-center {
+		@apply flex h-screen items-center justify-center bg-neutral-900 p-6 sm:p-8 md:p-12;
+	}
+
+	.light-font {
+		@apply text-white;
+	}
+
+	.glass-card {
+		@apply h-full w-full max-w-4xl space-y-4 rounded-2xl border border-white/20 bg-white/10 p-4 shadow-md backdrop-blur-lg;
+	}
+
+	.form {
+		@apply flex flex-row items-center gap-4;
+	}
+
+	.glass-input {
+		@apply w-full flex-1 rounded-lg border border-white/20 bg-white/10 p-3 placeholder-white/60 backdrop-blur-sm focus:outline-none;
+	}
+
+	.submit-btn {
+		@apply rounded-lg border border-lime-400/20 bg-lime-500/10 px-6 py-3 font-semibold shadow backdrop-blur-sm transition hover:bg-lime-500/20;
+	}
+
+	.constrained-glass-card {
+		@apply w-full rounded-lg border p-4 opacity-95 shadow-md backdrop-blur-lg;
+	}
+
+	.purple-bg-border {
+		@apply border-purple-400/70 bg-purple-400/15;
+	}
+
+	.emerald-bg-border {
+		@apply border-emerald-500/70 bg-emerald-500/15;
+	}
+
+	.red-bg-border {
+		@apply border-red-500/70 bg-red-500/15;
+	}
+
+	.animate-pulse {
+		animation: pulse 2s infinite;
+	}
+
+	.shimmer {
+		background: linear-gradient(
+			90deg,
+			rgba(255, 255, 255, 0) 0%,
+			rgba(255, 255, 255, 0.1) 50%,
+			rgba(255, 255, 255, 0) 100%
+		);
+		background-size: 200% 100%;
+		animation: shimmer 1.5s infinite;
+	}
+
+	@keyframes shimmer {
+		0% {
+			background-position: 200% 0;
+		}
+		100% {
+			background-position: -200% 0;
+		}
+	}
+}
